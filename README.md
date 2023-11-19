@@ -1,0 +1,2 @@
+# go-obsidian-bot
+
