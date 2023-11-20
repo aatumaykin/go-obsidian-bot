@@ -1,0 +1,10 @@
+telegram:
+  bot_token: ""
+  bot_timeout: 60
+  user:
+  need_remove: false
+  need_reply: true
+
+obsidian:
+  root: "/home/Obsidian"
+  note_path: "Inbox"
