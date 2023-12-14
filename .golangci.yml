@@ -61,18 +61,19 @@ linters-settings:
   lll:
     line-length: 140
 
-#issues:
-#  exclude-rules:
-#    - path: internal/service/template/template.go
-#      linters:
-#        - lll
-#    - path: internal/service/templatedata/render.go
-#      linters:
-#        - lll
-#    - path: internal/service/reportconfluence/main.go
-#      text: "G401: Use of weak cryptographic primitive"
-#    - path: internal/service/reportconfluence/main.go
-#      text: "G501: Blocklisted import crypto/md5: weak cryptographic primitive"
-
+issues:
+  # Excluding configuration per-path, per-linter, per-text and per-source
+  exclude-rules:
+    - text: 'should not use underscores in package names'
+      linters:
+        - stylecheck
+    - text: "var-naming: don't use an underscore in package name"
+      linters:
+        - revive
+    # Exclude some linters from running on tests files.
+    - path: _test\.go
+      linters:
+        - lll
+        - gofmt
 run:
   timeout: 5m

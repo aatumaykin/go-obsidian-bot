@@ -9,7 +9,7 @@ RELEASE_STR = $(shell git rev-parse --short HEAD)
 .PHONY: build
 build:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o bin/obsidian-bot-linux-amd64 .
-	#CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o bin/obsidian-bot-darwin-amd64 .
+	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o bin/obsidian-bot-darwin-amd64 .
 
 .PHONY: .install-linter
 .install-linter:

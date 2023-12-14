@@ -2,7 +2,6 @@ package helper
 
 import (
 	"os"
-	"time"
 )
 
 const perm0644 = 0644
@@ -16,12 +15,6 @@ func CreateFolderIfNotExist(path string) error {
 		}
 	}
 	return nil
-}
-
-func GetCurrentTimestampAsString() string {
-	currentTime := time.Now()
-	timestamp := currentTime.Format("20060102150405")
-	return timestamp
 }
 
 func CreateNote(fileName string, text string) error {
